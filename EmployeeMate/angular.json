@@ -24,6 +24,8 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.js",
               "src/styles.css"
             ],
             "scripts": []
@@ -119,6 +121,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "EmployeeMate"
+    }
+  },
+  "defaultProject": "EmployeeMate",
+  "cli": {
+    "analytics": "54b009fb-3d1f-4f30-a1a5-7240a1690a29"
+  }
 }
