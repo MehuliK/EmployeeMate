@@ -1,0 +1,41 @@
+.logo{
+    background: url(../../assets/output-onlinepngtools.png);
+    background-repeat: round;
+    overflow: hidden;
+    resize: both;
+    position: absolute;
+    margin-left: 47%;
+    height: 95px;
+    width: 95px;
+    margin-top: 10px;
+}
+
+.containerbg{
+    background: url(../../assets/BackgroundCity.jpg);
+    background-repeat: round;
+   
+}
+.overlay_div{
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
+  margin: auto;
+   margin-top:-21px;
+  border: 0px;
+}
+.card_body_padding{
+    padding:0 !important;
+}
+.imageDiv{
+    background: url(../../assets/man_Stairs_frontPage.jpg);
+    background-repeat: round;
+    overflow: hidden;
+    resize: both;
+    position: relative;
+}
+.linkToRegister{
+    margin: 8px;
+
+}
+.loginRegHyperLink{
+    color: blue;
+    text-decoration: underline;
+}
