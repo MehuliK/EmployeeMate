@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Output,EventEmitter} from '@angular/core';
 import {UserService} from '../user/user.service';
 import {Router} from '@angular/router';
 import {FormGroup, FormControl, Validators} from '@angular/forms'
+import { faEye,faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-login',
@@ -9,6 +10,9 @@ import {FormGroup, FormControl, Validators} from '@angular/forms'
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  faEye=faEye;
+  faEyeSlash=faEyeSlash;
+  @Output() dataInputFormObject:EventEmitter<string[]> = new EventEmitter<string[]>();
   form=new FormGroup({
     email:new FormControl('',[
       Validators.required,
@@ -21,19 +25,27 @@ export class LoginComponent implements OnInit {
       Validators.maxLength(10)
     ])
   })
-  // public email: string = '';
-  // public password: string = '';
-  // public isInvalidEmail: Boolean;
-  // public isInvalidPass: Boolean;
+   email: string = '';
+   password: string = '';
+  showPasswordValue: boolean=false;
   constructor(private userService: UserService,
               private router: Router) { }
 
   ngOnInit() {
+   
+
   }
-  showRegistrationPage(){
-    console.log("hey")
+  toggle_password(){
+    this.showPasswordValue=!this.showPasswordValue;
+        if( this.showPasswordValue){
+          document.getElementById('passwordLog').setAttribute("type", "text");
+        }else{
+          document.getElementById('passwordLog').setAttribute("type", "password");
+        }
   }
   submit(){
-    console.log("called")
+    this.email=this.form.get('email').value;
+   this.password=this.form.get('password').value;
+   this.dataInputFormObject.emit([this.email,this.password]);
   }
 }

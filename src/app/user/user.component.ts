@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
-  public showLoginPage = true;
+  showLoginPage = true;
+  getLoginDetailsFromUser=[];
+  getRegistrationDetailsFromUser=[]
   constructor() { }
 
   ngOnInit() {
@@ -20,5 +22,13 @@ export class UserComponent implements OnInit {
  }
  toggleEventHandler($event) {
    this.showLoginPage = true;
+ }
+ getLoginDetails(event:string[]){
+   this.getLoginDetailsFromUser=event;
+   console.log("parent",this.getLoginDetailsFromUser)
+ }
+ getRegistrationDetails(event:string[]){
+   this.getRegistrationDetailsFromUser=event;
+   console.log("reg par",this.getRegistrationDetailsFromUser)
  }
 }

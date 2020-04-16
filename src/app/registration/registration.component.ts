@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import {UserService} from '../user/user.service';
 import {Router} from '@angular/router';
 import {FormGroup, FormControl, Validators} from '@angular/forms'
+import { faEye,faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-registration',
@@ -9,6 +10,14 @@ import {FormGroup, FormControl, Validators} from '@angular/forms'
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent implements OnInit {
+  faEye=faEye;
+  faEyeSlash=faEyeSlash;
+  @Output() registrationArray:EventEmitter<string[]> = new EventEmitter<string[]>();
+  emailRegis='';
+  passwordRegis='';
+  firstName='';
+  secondName='';
+  showPasswordValue=false;
   form=new FormGroup({
     firstName:new FormControl('',Validators.required),
     secondName:new FormControl('',Validators.required),
@@ -30,8 +39,21 @@ export class RegistrationComponent implements OnInit {
 
   ngOnInit() {
   }
+  toggle_password(){
+    this.showPasswordValue=!this.showPasswordValue;
+        if( this.showPasswordValue){
+          document.getElementById('passwordReg').setAttribute("type", "text");
+        }else{
+          document.getElementById('passwordReg').setAttribute("type", "password");
+        }
+  }
 
   register() {
+  this.emailRegis=this.form.get('email').value;
+  this.passwordRegis=this.form.get('password').value;
+  this.firstName=this.form.get('firstName').value;
+  this.secondName=this.form.get('secondName').value;
+  this.registrationArray.emit([this.firstName,this.secondName,this.emailRegis,this.secondName])
     // this.userService.createUser(this.email, this.password1, this.fullName)
     //   .subscribe((response: any) =>{
     // if (response.status === 200) {
@@ -43,6 +65,7 @@ export class RegistrationComponent implements OnInit {
     //     this.toggleHandler.emit('login');
     // }
     // })
+
 
   }
 }

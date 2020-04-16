@@ -1,0 +1,31 @@
+<div class="container-fluid header_search_box_no_details h-100" *ngIf="!showDetailedPropertyView">
+    <div class="row">
+        <div class="col-lg-12 home_body_input_div">
+            abc
+            <button (click)="showDetailedProperty()">click me to get a detailed view</button>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+              <div class="card mx-auto w-75 h-120 overlay_div">
+                  <div class="card-body w-90 h-100 card_body_padding">
+                      <div class="row w-100 h-100 ml-0 mr-0">
+                          
+                      </div>
+                  </div>
+                  
+            </div>
+        </div>
+        
+  </div>
+    </div>
+ </div>
+
+
+
+<div class="container-fluid header_search_box h-100" *ngIf="showDetailedPropertyView">
+   <div class="row">
+       <div class="col-lg-12 home_body_input_div">
+           abc
+       </div>
+   </div>
+</div>

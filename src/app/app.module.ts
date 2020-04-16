@@ -15,6 +15,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
+import { HomeBodyComponent } from './home-body/home-body.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -27,7 +29,8 @@ import { UserProfileComponent } from './user/user-profile/user-profile.component
     UserComponent,
     HeaderComponent,
     FooterComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    HomeBodyComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,8 @@ import { UserProfileComponent } from './user/user-profile/user-profile.component
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

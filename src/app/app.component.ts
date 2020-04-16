@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router, NavigationEnd} from '@angular/router';
+import { faEye,faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -13,6 +14,8 @@ import {Router, NavigationEnd} from '@angular/router';
 // }
 
 export class AppComponent implements OnInit {
+  faEye=faEye;
+  faEyeSlash=faEyeSlash;
   headerFooter: boolean;
 
   constructor(

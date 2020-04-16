@@ -1,6 +1,6 @@
 <div class="container">
   <div class="welcomeTab text-center">Welcome To EmployeeMate!</div>
-  <form name="form" [formGroup]="form" (ngSubmit)="form.valid && submit()">
+  <form name="form" [formGroup]="form" (ngSubmit)="form.valid && register()">
     <div class="form-group">
       <label for="firstName">First Name</label>
       <input type="text" class="form-control" formControlName="firstName" [ngClass]="{'is-invalid':form.get('firstName').touched && form.get('firstName').invalid}"/>
@@ -9,14 +9,14 @@
       </div>
     </div>
     <div class="form-group">
-      <label for="secondName">First Name</label>
+      <label for="secondName">Last Name</label>
       <input type="text" class="form-control" formControlName="secondName" [ngClass]="{'is-invalid':form.get('secondName').touched && form.get('secondName').invalid}"/>
-      <div *ngIf="form.get('secondName').touched && form.get('firstName').invalid" class="invalid-feedback">
-        <div *ngIf="form.get('secondName').errors.required">First Name is Required</div>
+      <div *ngIf="form.get('secondName').touched && form.get('secondName').invalid" class="invalid-feedback">
+        <div *ngIf="form.get('secondName').errors.required">Last Name is Required</div>
       </div>
     </div>
     <div class="form-group">
-      <label for="email">Username</label>
+      <label for="email">Email</label>
       <input type="text" class="form-control" formControlName="email" [ngClass]="{'is-invalid':form.get('email').touched && form.get('email').invalid}"/>
       <div *ngIf="form.get('email').touched && form.get('email').invalid" class="invalid-feedback">
         <div *ngIf="form.get('email').errors.required">Email is Required</div>
@@ -25,7 +25,7 @@
     </div>
     <div class="form-group">
       <label for="password">Password</label>
-      <input type="text" class="form-control" formControlName="password" [ngClass]="{'is-invalid':form.get('password').touched && form.get('password').invalid}"/>
+      <input type="password" class="form-control" id="passwordReg" formControlName="password" [ngClass]="{'is-invalid':form.get('password').touched && form.get('password').invalid}" /><fa-icon *ngIf="!showPasswordValue" class="eyeIcon" (click)="toggle_password()" [icon]="faEye"></fa-icon><fa-icon *ngIf="showPasswordValue" class="eyeIcon_slash" (click)="toggle_password()" [icon]="faEyeSlash"></fa-icon>
       <div *ngIf="form.get('password').touched && form.get('password').invalid" class="invalid-feedback">
         <div *ngIf="form.get('password').errors.required">Email is Required</div>
         <div *ngIf="form.get('password').errors.minlength">Password should be of minimum 6 characters</div>

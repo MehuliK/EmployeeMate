@@ -15,10 +15,10 @@
 
                               <div>
                                   <div *ngIf="showLoginPage">
-                                      <app-login></app-login>
+                                      <app-login (dataInputFormObject)="getLoginDetails($event)"></app-login>
                                   </div>
                                   <div *ngIf="!showLoginPage">
-                                      <app-registration
+                                      <app-registration (registrationArray)="getRegistrationDetails($event)"
                                           (toggleHandler)="toggleEventHandler($event)">
                                       </app-registration>
                                   </div>
