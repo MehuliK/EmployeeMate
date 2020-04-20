@@ -43,16 +43,13 @@
     width: 89%;
  }
 
- .cityArrayList li{
-     cursor: pointer;
- }
-
  .list-show {
     display: none;
     left: -4px;
     position: absolute;
     /* top: 5rem; */
     width: 103%;
+    cursor: pointer;
 
     &.active {
       display: block;

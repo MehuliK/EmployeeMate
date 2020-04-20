@@ -10,11 +10,11 @@
           <div class="card mx-auto w-75 h-120 overlay_div">
               <div class="card-body w-90 h-100">
                   <div class="row">
-                      <div class="col-lg-3 w-100"><input class="w-100 h-100" autofocus (keyup)="enterFunction($event)" [(ngModel)]="searchText" type="text" placeholder="City Name" [value]="searchTextValue"/>
-                          <div class="list-show" [ngClass]="(showListData || isDropDownClick ) ? 'active': ''" ng-model="textVal">
+                      <div class="col-lg-3 w-100"><input class="w-100 h-100" autofocus (keyup)="enterFunction($event)" [(ngModel)]="searchTextValue" type="text" placeholder="City Name" [value]="searchTextValue"/>
+                          <div class="list-show" [ngClass]="showListData? 'active': ''" ng-model="textVal">
                             <div class="list-body">
                               <div class="col list-group ">
-                                <div class="row list-group-item list-length" *ngFor="let c of cityArray | filter : searchText">
+                                <div class="row list-group-item list-length" *ngFor="let c of cityArray | filter : searchTextValue">
                                   <div (click)="onTouchStart(c)">{{c}}</div>
                                 </div>
                               </div>

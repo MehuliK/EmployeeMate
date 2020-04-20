@@ -15,39 +15,34 @@ export class HomeBodyComponent implements OnInit {
   searchTexttech: string;
   disableButton: boolean;
   showListData = false;
-  isDropDownClick=false;
+  keyupValue: string;
 
   constructor() { }
 
   ngOnInit() {
     this.disableButton=false;
   }
-  enterFunction($event) {
-    console.log("here")
-    this.showListData = true;
-    if (this.searchTextValue){
-      this.disableButton=true;
-    }else{
-      this.disableButton=false;
-    }
-  }
-  showAirportCodeList() {
-  
-    if (this.showListData) {
-      this.showListData = false;
-      this.isDropDownClick = false;
-    } else {
-      this.isDropDownClick = true;
+  enterFunction(event) {
+    console.log("textval",this.searchTextValue)
+    this.keyupValue=event.target.value
+    if(event.target.value !== "null" && event.target.value !== "undefined" && event.target.value !== "" ){
       this.showListData = true;
+      if(this.searchTextValue !== "null" && this.searchTextValue !== "undefined" && this.searchTextValue !== "" ){
+        this.disableButton=false
+      }
+    }else{
+      this.showListData = false;
     }
-   
+    
+    
   }
   onTouchStart( value): void {
-    console.log("val",value)
+    console.log("val",this.keyupValue)
+    console.log("inbox value",value)
    this.searchTextValue=value;
+   console.log("searched country",this.searchTextValue)
     this.showListData = false;
-    console.log("this", this.searchTextValue)
-    if (this.searchTextValue){
+    if (this.searchTextValue && this.keyupValue){
       this.disableButton=true;
     }else{
       this.disableButton=false;
