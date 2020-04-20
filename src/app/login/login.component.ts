@@ -32,7 +32,6 @@ export class LoginComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
-   
 
   }
   toggle_password(){
@@ -47,5 +46,12 @@ export class LoginComponent implements OnInit {
     this.email=this.form.get('email').value;
    this.password=this.form.get('password').value;
    this.dataInputFormObject.emit([this.email,this.password]);
+  }
+  keyDownFunction(event) {
+    if(event.keyCode == 13) {
+      this.email=this.form.get('email').value;
+      this.password=this.form.get('password').value;
+      this.dataInputFormObject.emit([this.email,this.password]);
+    }
   }
 }

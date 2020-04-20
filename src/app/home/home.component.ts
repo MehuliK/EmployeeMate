@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  showDetailedValuePage:boolean=false;
 
   constructor() { }
 
   ngOnInit() {
+  }
+  getInitialFitlerKeys(event:any){
+    this.showDetailedValuePage=true;
+    console.log("event in parent",event)
   }
 
 }

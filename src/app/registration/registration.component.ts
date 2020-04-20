@@ -68,4 +68,13 @@ export class RegistrationComponent implements OnInit {
 
 
   }
+  keyDownFunction(event) {
+    if(event.keyCode == 13) {
+      this.emailRegis=this.form.get('email').value;
+      this.passwordRegis=this.form.get('password').value;
+      this.firstName=this.form.get('firstName').value;
+      this.secondName=this.form.get('secondName').value;
+      this.registrationArray.emit([this.firstName,this.secondName,this.emailRegis,this.secondName])
+    }
+  }
 }

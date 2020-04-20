@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -9,7 +10,7 @@ export class UserComponent implements OnInit {
   showLoginPage = true;
   getLoginDetailsFromUser=[];
   getRegistrationDetailsFromUser=[]
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -25,7 +26,7 @@ export class UserComponent implements OnInit {
  }
  getLoginDetails(event:string[]){
    this.getLoginDetailsFromUser=event;
-   console.log("parent",this.getLoginDetailsFromUser)
+   this.router.navigate(['/home']);
  }
  getRegistrationDetails(event:string[]){
    this.getRegistrationDetailsFromUser=event;

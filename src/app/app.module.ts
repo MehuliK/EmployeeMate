@@ -17,6 +17,8 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
 import { HomeBodyComponent } from './home-body/home-body.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FilterPipe} from './shared/filter.pipe';
+import { DetailedPropertyPageComponent } from './detailed-property-page/detailed-property-page.component';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HeaderComponent,
     FooterComponent,
     UserProfileComponent,
-    HomeBodyComponent
+    HomeBodyComponent,
+    FilterPipe,
+    DetailedPropertyPageComponent
   ],
   imports: [
     BrowserModule,

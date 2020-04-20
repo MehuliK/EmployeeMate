@@ -4,9 +4,10 @@
     <app-header ></app-header>
   </div>
   <div class="home-body">
-    <app-home-body></app-home-body>
+    <app-home-body *ngIf="!showDetailedValuePage" (initialFilterValues)="getInitialFitlerKeys($event)"></app-home-body>
+    <app-detailed-property-page *ngIf="showDetailedValuePage" ></app-detailed-property-page>
   </div>
-  <div class="align-items-center w-100 h-15" >
+  <div class="align-items-center footer_height w-100" >
     <app-footer ></app-footer>
   </div>
 </div>

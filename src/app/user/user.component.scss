@@ -1,35 +1,10 @@
-.logo{
-    background: url(../../assets/output-onlinepngtools.png);
-    background-repeat: round;
-    overflow: hidden;
-    resize: both;
-    position: absolute;
-    margin-left: 47%;
-    height: 95px;
-    width: 95px;
-    margin-top: 10px;
-}
 
-.containerbg{
-    background: url(../../assets/BackgroundCity.jpg);
-    background-repeat: round;
-   
-}
-.overlay_div{
-  box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
-  margin: auto;
-   margin-top:-21px;
-  border: 0px;
+.logo-holder{
+    width: 22%;
+    margin-left: 39%;
 }
 .card_body_padding{
     padding:0 !important;
-}
-.imageDiv{
-    background: url(../../assets/man_Stairs_frontPage.jpg);
-    background-repeat: round;
-    overflow: hidden;
-    resize: both;
-    position: relative;
 }
 .linkToRegister{
     margin: 8px;
@@ -39,3 +14,38 @@
     color: blue;
     text-decoration: underline;
 }
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial;
+    font-size: 17px;
+  }
+  
+  .container-fluid {
+    position: relative;
+    margin: 0 auto;
+  }
+  
+  .container-fluid img {vertical-align: middle;}
+  
+  .container-fluid .content {
+    position: absolute;
+    bottom: 0;
+    margin-left: 35%;
+    margin-bottom: 10%;
+    background: black;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 30%;
+  }
+  .logo-holder{
+    margin-left: 43%;
+    height: 85px;
+    width: 85px;
+    margin-top: -39px;
+    background-color: white;
+    border-radius: 41px;
+  }
