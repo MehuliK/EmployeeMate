@@ -23,7 +23,6 @@ export class HomeBodyComponent implements OnInit {
     this.disableButton=false;
   }
   enterFunction(event) {
-    console.log("textval",this.searchTextValue)
     this.keyupValue=event.target.value
     if(event.target.value !== "null" && event.target.value !== "undefined" && event.target.value !== "" ){
       this.showListData = true;
@@ -49,24 +48,6 @@ export class HomeBodyComponent implements OnInit {
     }
    
   }
-
-  bindValueToInputBoxCity(item:string){
-  //  this.searchText=item;
-    document.getElementById("cityArrayList").style.display="none";
-    this.disableButton=true;
-  }
-  bindValueToInputBoxCompany(item:string){
-    this.searchTextCom=item;
-    document.getElementById("companyArrayList").style.display="none";
-    this.disableButton=true;
-  }
-  bindValueToInputBoxTechPark(item:string){
-    this.searchTexttech=item;
-    document.getElementById("techParkList").style.display="none";
-    this.disableButton=true;
-  }
- 
-
   showDetailedFilteredValue(){
     this.initialFilterValues.emit([this.searchTextValue,this.searchTextCom,this.searchTexttech])
   }
