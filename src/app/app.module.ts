@@ -16,7 +16,7 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
 import { HomeBodyComponent } from './home-body/home-body.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+//import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FilterPipe} from './shared/filter.pipe';
 import { DetailedPropertyPageComponent } from './detailed-property-page/detailed-property-page.component';
 
@@ -43,7 +43,7 @@ import { DetailedPropertyPageComponent } from './detailed-property-page/detailed
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    FontAwesomeModule
+    //FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

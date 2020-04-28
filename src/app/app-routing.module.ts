@@ -14,12 +14,12 @@ const routes: Routes = [
   { path: 'logout', component: UserComponent},
   {path: 'user-profile',component:UserProfileComponent},
   {path: 'home', component: HomeComponent, 
- canActivate:[RootAuthGuard],
-  //   children: [
-  //       { path: 'orders', loadChildren: () => import('./orders/orders.module').then(m => m.OrdersModule) },
-  //       { path: '', loadChildren: () => import('./projects/projects.module').then(m => m.ProjectsModule) },
+//  canActivate:[RootAuthGuard],
+    // children: [
+    //     { path: 'orders', loadChildren: () => import('./orders/orders.module').then(m => m.OrdersModule) },
+    //     { path: '', loadChildren: () => import('./projects/projects.module').then(m => m.ProjectsModule) },
 
-  //   ]
+    // ]
   },
 
 

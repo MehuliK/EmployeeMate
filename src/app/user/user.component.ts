@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {UserService} from './user.service';
 
 @Component({
   selector: 'app-user',
@@ -8,11 +9,14 @@ import {Router} from '@angular/router';
 })
 export class UserComponent implements OnInit {
   showLoginPage = true;
+  isLogined:boolean;
   getLoginDetailsFromUser=[];
   getRegistrationDetailsFromUser=[]
-  constructor(private router: Router) { }
+  wrongPassword: boolean;
+  constructor(private router: Router,private UserService:UserService) { }
 
   ngOnInit() {
+    this.isLogined=false;
   }
  toggle(condition: String) {
    if (condition === 'login') {
@@ -26,7 +30,20 @@ export class UserComponent implements OnInit {
  }
  getLoginDetails(event:string[]){
    this.getLoginDetailsFromUser=event;
-   this.router.navigate(['/home']);
+   const email=this.getLoginDetailsFromUser[0];
+    this.UserService.login(email)
+      .subscribe((data:{}) =>{
+        if( data[0].password=this.getLoginDetailsFromUser[1]){
+          this.isLogined=true;
+        console.log("200",data)
+        this.router.navigate(['/home'])
+        }else{
+          this.wrongPassword=true;
+        }
+     
+    
+    });
+
  }
  getRegistrationDetails(event:string[]){
    this.getRegistrationDetailsFromUser=event;

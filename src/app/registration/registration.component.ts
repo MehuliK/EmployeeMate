@@ -2,7 +2,7 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import {UserService} from '../user/user.service';
 import {Router} from '@angular/router';
 import {FormGroup, FormControl, Validators} from '@angular/forms'
-import { faEye,faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+//import { faEye,faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-registration',
@@ -10,8 +10,8 @@ import { faEye,faEyeSlash } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent implements OnInit {
-  faEye=faEye;
-  faEyeSlash=faEyeSlash;
+  //faEye=faEye;
+  //faEyeSlash=faEyeSlash;
   @Output() registrationArray:EventEmitter<string[]> = new EventEmitter<string[]>();
   emailRegis='';
   passwordRegis='';

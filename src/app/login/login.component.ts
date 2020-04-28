@@ -2,7 +2,7 @@ import { Component, OnInit ,Output,EventEmitter} from '@angular/core';
 import {UserService} from '../user/user.service';
 import {Router} from '@angular/router';
 import {FormGroup, FormControl, Validators} from '@angular/forms'
-import { faEye,faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+//import { faEye,faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-login',
@@ -10,8 +10,8 @@ import { faEye,faEyeSlash } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  faEye=faEye;
-  faEyeSlash=faEyeSlash;
+  //faEye=faEye;
+  //faEyeSlash=faEyeSlash;
   @Output() dataInputFormObject:EventEmitter<string[]> = new EventEmitter<string[]>();
   form=new FormGroup({
     email:new FormControl('',[
@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
         }
   }
   submit(){
-    this.email=this.form.get('email').value;
+  this.email=this.form.get('email').value;
    this.password=this.form.get('password').value;
    this.dataInputFormObject.emit([this.email,this.password]);
   }

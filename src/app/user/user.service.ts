@@ -9,13 +9,9 @@ export class UserService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public login(email: String, password: String) {
-    const payload = {
-      email: email,
-      password: password
-    }
-    return this.httpClient.post( environment.baseURL + 'api/user/autheticateUser',
-     payload , this.noAuthHeader);
+  public login(email: String) {
+   
+    return this.httpClient.get( environment.baseURL + 'getUser/'+email);
 
   }
  noAuthHeader = { headers: new HttpHeaders({ 'NoAuth': 'True' }) };
