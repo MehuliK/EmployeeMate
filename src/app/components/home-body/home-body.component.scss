@@ -1,0 +1,66 @@
+.header_search_box{
+    padding: 0;
+    background-color: #e9e9e9;
+    width: 97.5%;
+   
+}
+.home_body_input_div{
+    background-color: #fff;
+    margin-bottom: 10px;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
+}
+.header_search_box_no_details{
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3)
+      ),
+      url(../../../assets/BackgroundCity.jpg);
+    background-repeat: round;
+}
+.overlay_div{
+   background: url(../../../assets/blueTransparentbg.PNG);
+    margin: auto;
+    border: 0px;
+  }
+ .style_text{
+    margin-top: 11%;
+    font-size: 54px;
+    font-weight: 600;
+    margin-bottom: 3.5%;
+    color: #fff;
+    text-shadow: 2px 2px #050f20;
+ } 
+ .btn-primary{
+     background-color: #006699;
+     border-color: #006699
+ }
+ .cityArrayList{
+     position: absolute;
+     background-color: white;
+    border-radius: 5px;
+    list-style: none;
+    padding-left: 0;
+    width: 89%;
+ }
+
+ .list-show {
+    display: none;
+    left: -4px;
+    position: absolute;
+    /* top: 5rem; */
+    width: 103%;
+    cursor: pointer;
+
+    &.active {
+      display: block;
+              }
+          }
+          .list-group {
+            -webkit-overflow-scrolling: touch;
+            border-bottom-color: white;
+            max-height: 22.75rem;
+            overflow: auto;
+            padding-left: 2.125rem;
+            padding-right: 2.125rem;
+          
+          }      
