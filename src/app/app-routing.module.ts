@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {LoginComponent} from './login/login.component';
-import {HomeComponent} from './home/home.component';
-import {ErrorComponent} from './error/error.component';
-import {UserComponent} from './user/user.component';
+import {LoginComponent} from './components/login/login.component';
+import {HomeComponent} from './components/home/home.component';
+import {ErrorComponent} from './components/error/error.component';
+import {UserComponent} from './components/user/user.component';
 import {RootAuthGuard} from './shared/guards/root-auth.guard';
-import {UserProfileComponent} from './user/user-profile/user-profile.component';
+import {UserProfileComponent} from './components/user-profile/user-profile.component';
 
 
 const routes: Routes = [
