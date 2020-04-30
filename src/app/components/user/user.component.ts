@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { UserService } from '../../services/user/user.service';
+import { LoginService } from '../../services/login/login.service';
 import { AlertService } from '../../services/alert/alert.service';
 import { HttpClient } from '@angular/common/http';
 import { first } from 'rxjs/operators';
@@ -13,20 +13,20 @@ import { first } from 'rxjs/operators';
 export class UserComponent implements OnInit {
   showLoginPage = true;
   returnUrl: string;
-  isLogined: boolean;
+  isLoggedIn: boolean;
   getLoginDetailsFromUser = [];
   getRegistrationDetailsFromUser = []
   wrongPassword: boolean;
   constructor(
     private router: Router,
-    private userService: UserService,
+    private userService: LoginService,
     private route: ActivatedRoute,
     private alertService: AlertService
   ) { }
 
   ngOnInit() {
-    this.isLogined = false;
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+    this.isLoggedIn = false;
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/home';
     this.userService.logout();
   }
 
@@ -51,9 +51,11 @@ export class UserComponent implements OnInit {
       .subscribe((data) => {
         if(data!=null){
           this.router.navigate([this.returnUrl]);
+          this.isLoggedIn=true;
+          console.log("GET:",data);
         }
         else{
-          
+          console.log("GET: call failed");
         }
         
       },

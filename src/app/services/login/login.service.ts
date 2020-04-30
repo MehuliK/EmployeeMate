@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class LoginService {
 
   constructor(private httpClient: HttpClient) { }
 
@@ -26,6 +26,7 @@ export class UserService {
   logout() {
     // remove user from local storage to log user out
     sessionStorage.removeItem('currentUser');
+    
 }
 
  noAuthHeader = { headers: new HttpHeaders({ 'NoAuth': 'True' }) };

@@ -1,5 +1,5 @@
 import { Component, OnInit ,Output,EventEmitter} from '@angular/core';
-import {UserService} from '../../services/user/user.service';
+import {LoginService} from '../../services/login/login.service';
 import {Router} from '@angular/router';
 import {FormGroup, FormControl, Validators} from '@angular/forms'
 //import { faEye,faEyeSlash } from '@fortawesome/free-solid-svg-icons';
@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
    email: string = '';
    password: string = '';
   showPasswordValue: boolean=false;
-  constructor(private userService: UserService,
+  constructor(private loginService: LoginService,
               private router: Router) { }
 
   ngOnInit() {
