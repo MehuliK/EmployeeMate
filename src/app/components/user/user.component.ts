@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
-import {UserService} from '../../services/user/user.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { LoginService } from '../../services/login/login.service';
+import { AlertService } from '../../services/alert/alert.service';
+import { HttpClient } from '@angular/common/http';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-user',
@@ -9,45 +12,60 @@ import {UserService} from '../../services/user/user.service';
 })
 export class UserComponent implements OnInit {
   showLoginPage = true;
-  isLogined:boolean;
-  getLoginDetailsFromUser=[];
-  getRegistrationDetailsFromUser=[]
+  returnUrl: string;
+  isLoggedIn: boolean;
+  getLoginDetailsFromUser = [];
+  getRegistrationDetailsFromUser = []
   wrongPassword: boolean;
-  constructor(private router: Router,private UserService:UserService) { }
+  constructor(
+    private router: Router,
+    private userService: LoginService,
+    private route: ActivatedRoute,
+    private alertService: AlertService
+  ) { }
 
   ngOnInit() {
-    this.isLogined=false;
+    this.isLoggedIn = false;
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/home';
+    this.userService.logout();
   }
- toggle(condition: String) {
-   if (condition === 'login') {
-     this.showLoginPage = true;
-   } else {
-     this.showLoginPage = false;
-   }
- }
- toggleEventHandler($event) {
-   this.showLoginPage = true;
- }
- getLoginDetails(event:string[]){
-   this.getLoginDetailsFromUser=event;
-   const email=this.getLoginDetailsFromUser[0];
-    this.UserService.login(email)
-      .subscribe((data) =>{
-        console.log("data",data)
-        if( data[0].password=this.getLoginDetailsFromUser[1]){
-          this.isLogined=true;
-        console.log("200",data)
-        this.router.navigate(['/home'])
-        }else{
-          this.wrongPassword=true;
-        }
-     
-    
-    });
 
- }
- getRegistrationDetails(event:string[]){
-   this.getRegistrationDetailsFromUser=event;
-   console.log("reg par",this.getRegistrationDetailsFromUser)
- }
+  toggle(condition: String) {
+    if (condition === 'login') {
+      this.showLoginPage = true;
+    } else {
+      this.showLoginPage = false;
+    }
+  }
+  toggleEventHandler($event) {
+    this.showLoginPage = true;
+  }
+
+  
+  getLoginDetails(event: string[]) {
+    this.getLoginDetailsFromUser = event;
+    const email = this.getLoginDetailsFromUser[0];
+    const password = this.getLoginDetailsFromUser[1];
+    this.userService.login(email, password)
+      .pipe(first())
+      .subscribe((data) => {
+        if(data!=null){
+          this.router.navigate([this.returnUrl]);
+          this.isLoggedIn=true;
+          console.log("GET:",data);
+        }
+        else{
+          console.log("GET: call failed");
+        }
+        
+      },
+        error => {
+          this.alertService.error(error);
+        });
+
+  }
+  getRegistrationDetails(event: string[]) {
+    this.getRegistrationDetailsFromUser = event;
+    console.log("reg par", this.getRegistrationDetailsFromUser)
+  }
 }
