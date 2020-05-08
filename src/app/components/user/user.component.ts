@@ -32,7 +32,8 @@ export class UserComponent implements OnInit {
    this.getLoginDetailsFromUser=event;
    const email=this.getLoginDetailsFromUser[0];
     this.UserService.login(email)
-      .subscribe((data:{}) =>{
+      .subscribe((data) =>{
+        console.log("data",data)
         if( data[0].password=this.getLoginDetailsFromUser[1]){
           this.isLogined=true;
         console.log("200",data)

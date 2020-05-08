@@ -11,7 +11,7 @@ export class UserService {
 
   public login(email: String) {
    
-    return this.httpClient.get( environment.baseURL + 'getUser/'+email);
+    return this.httpClient.get( environment.baseURL + 'getUsers/');
 
   }
  noAuthHeader = { headers: new HttpHeaders({ 'NoAuth': 'True' }) };
