@@ -1,4 +1,4 @@
-import { Component, OnInit ,Output,EventEmitter} from '@angular/core';
+import { Component, OnInit ,Output,EventEmitter, Input} from '@angular/core';
 import {LoginService} from '../../services/login/login.service';
 import {Router} from '@angular/router';
 import {FormGroup, FormControl, Validators} from '@angular/forms'
@@ -12,6 +12,7 @@ import {FormGroup, FormControl, Validators} from '@angular/forms'
 export class LoginComponent implements OnInit {
   //faEye=faEye;
   //faEyeSlash=faEyeSlash;
+  @Input() showInvalidDiv:boolean;
   @Output() dataInputFormObject:EventEmitter<string[]> = new EventEmitter<string[]>();
   form=new FormGroup({
     email:new FormControl('',[

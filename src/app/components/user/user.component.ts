@@ -16,7 +16,7 @@ export class UserComponent implements OnInit {
   isLoggedIn: boolean;
   getLoginDetailsFromUser = [];
   getRegistrationDetailsFromUser = []
-  wrongPassword: boolean;
+  showInvalidDiv:boolean=false;
   constructor(
     private router: Router,
     private userService: LoginService,
@@ -56,6 +56,7 @@ export class UserComponent implements OnInit {
         }
         else{
           console.log("GET: call failed");
+          this.showInvalidDiv=true;
         }
         
       },

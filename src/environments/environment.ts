@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseURL: 'https://heroku-mirageapp.herokuapp.com/mirage-services/'
+  baseURL: 'http://employeemate-env.eba-b6w8ggi2.us-east-2.elasticbeanstalk.com/api/'
 };
 
 /*

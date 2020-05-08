@@ -21,5 +21,6 @@
   <div class="form-group">
    <button class="btn btn-primary"  type="submit" [disabled]="!form.valid">Login</button>
   </div>
+  <span class="wronginput" *ngIf="showInvalidDiv">Oops! the inputs are not valid</span>
 </form>
 </div>
