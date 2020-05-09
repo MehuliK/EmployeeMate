@@ -47,7 +47,6 @@ export class UserComponent implements OnInit {
     const email = this.getLoginDetailsFromUser[0];
     const password = this.getLoginDetailsFromUser[1];
     this.userService.login(email, password)
-      .pipe(first())
       .subscribe((data) => {
         if(data!=null){
           this.router.navigate([this.returnUrl]);
@@ -55,13 +54,13 @@ export class UserComponent implements OnInit {
           console.log("GET:",data);
         }
         else{
-          console.log("GET: call failed");
+          console.log("GET: No User Found");
           this.showInvalidDiv=true;
         }
         
       },
         error => {
-          console.log(error);
+          console.log("GET Call Failed:",error);
         });
 
   }
