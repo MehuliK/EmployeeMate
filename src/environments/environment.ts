@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseURL: 'http://www.http://emp-mate-dev.ap-south-1.elasticbeanstalk.com//api/'
+  baseURL: 'http://emp-mate-dev.ap-south-1.elasticbeanstalk.com//api/'
 };
 
 /*
