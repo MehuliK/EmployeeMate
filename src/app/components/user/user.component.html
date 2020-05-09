@@ -12,7 +12,7 @@
 
                   <div>
                       <div *ngIf="showLoginPage">
-                          <app-login (dataInputFormObject)="getLoginDetails($event)"></app-login>
+                          <app-login (dataInputFormObject)="getLoginDetails($event)" [showInvalidDiv]="showInvalidDiv"></app-login>
                       </div>
                       <div *ngIf="!showLoginPage">
                           <app-registration (registrationArray)="getRegistrationDetails($event)"
