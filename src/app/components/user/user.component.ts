@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { LoginService } from '../../services/login/login.service';
-import { AlertService } from '../../services/alert/alert.service';
-import { HttpClient } from '@angular/common/http';
+
+
 import { first } from 'rxjs/operators';
 
 @Component({
@@ -15,13 +15,12 @@ export class UserComponent implements OnInit {
   returnUrl: string;
   isLoggedIn: boolean;
   getLoginDetailsFromUser = [];
-  getRegistrationDetailsFromUser = []
   wrongPassword: boolean;
   constructor(
     private router: Router,
     private userService: LoginService,
     private route: ActivatedRoute,
-    private alertService: AlertService
+    
   ) { }
 
   ngOnInit() {
@@ -60,12 +59,28 @@ export class UserComponent implements OnInit {
         
       },
         error => {
-          this.alertService.error(error);
+          console.log(error);
         });
 
   }
-  getRegistrationDetails(event: string[]) {
-    this.getRegistrationDetailsFromUser = event;
-    console.log("reg par", this.getRegistrationDetailsFromUser)
+  getRegistrationDetails(event:any) {
+    console.log("EVENT:",event);
+    this.userService.createUser(event)
+    .pipe(first())
+    .subscribe(
+      (data) =>{
+        if(data!=null){
+          this.router.navigate([this.returnUrl]);
+          console.log("POST Success:",data);
+        }
+        else{
+          console.log("POST Failed: call failed");
+        }
+        
+      },
+        error => {
+          console.log(error);
+        });
+      }
   }
-}
+

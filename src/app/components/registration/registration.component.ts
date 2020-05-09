@@ -12,15 +12,11 @@ import {FormGroup, FormControl, Validators} from '@angular/forms'
 export class RegistrationComponent implements OnInit {
   //faEye=faEye;
   //faEyeSlash=faEyeSlash;
-  @Output() registrationArray:EventEmitter<string[]> = new EventEmitter<string[]>();
-  emailRegis='';
-  passwordRegis='';
-  firstName='';
-  secondName='';
+  @Output() registrationArray:EventEmitter<{[key:string]:string}> = new EventEmitter<{[key:string]:string}>();
   showPasswordValue=false;
   form=new FormGroup({
-    firstName:new FormControl('',Validators.required),
-    secondName:new FormControl('',Validators.required),
+    name:new FormControl('',Validators.required),
+    lname:new FormControl('',Validators.required),
     email:new FormControl('',[
       Validators.required,
        Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$"),
@@ -49,32 +45,15 @@ export class RegistrationComponent implements OnInit {
   }
 
   register() {
-  this.emailRegis=this.form.get('email').value;
-  this.passwordRegis=this.form.get('password').value;
-  this.firstName=this.form.get('firstName').value;
-  this.secondName=this.form.get('secondName').value;
-  this.registrationArray.emit([this.firstName,this.secondName,this.emailRegis,this.secondName])
-    // this.userService.createUser(this.email, this.password1, this.fullName)
-    //   .subscribe((response: any) =>{
-    // if (response.status === 200) {
-    //     alert(response.msg);
-    //     this.email = '';
-    //     this.password1 = '';
-    //     this.password1 = '';
-    //     this.fullName = '';
-    //     this.toggleHandler.emit('login');
-    // }
-    // })
+  console.log(this.form.value)
+  this.registrationArray.emit(this.form.value)
+   
 
 
   }
   keyDownFunction(event) {
     if(event.keyCode == 13) {
-      this.emailRegis=this.form.get('email').value;
-      this.passwordRegis=this.form.get('password').value;
-      this.firstName=this.form.get('firstName').value;
-      this.secondName=this.form.get('secondName').value;
-      this.registrationArray.emit([this.firstName,this.secondName,this.emailRegis,this.secondName])
+      this.registrationArray.emit(this.form.value)
     }
   }
 }

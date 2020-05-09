@@ -2,17 +2,17 @@
   <div class="welcomeTab text-center">Welcome To EmployeeMate!</div>
   <form name="form" [formGroup]="form" (keydown)="keyDownFunction($event)" (ngSubmit)="form.valid && register()">
     <div class="form-group">
-      <label for="firstName">First Name</label>
-      <input type="text" class="form-control" formControlName="firstName" [ngClass]="{'is-invalid':form.get('firstName').touched && form.get('firstName').invalid}"/>
-      <div *ngIf="form.get('firstName').touched && form.get('firstName').invalid" class="invalid-feedback">
-        <div *ngIf="form.get('firstName').errors.required">First Name is Required</div>
+      <label for="name">First Name</label>
+      <input type="text" class="form-control" formControlName="name" [ngClass]="{'is-invalid':form.get('name').touched && form.get('name').invalid}"/>
+      <div *ngIf="form.get('name').touched && form.get('name').invalid" class="invalid-feedback">
+        <div *ngIf="form.get('name').errors.required">First Name is Required</div>
       </div>
     </div>
     <div class="form-group">
-      <label for="secondName">Last Name</label>
-      <input type="text" class="form-control" formControlName="secondName" [ngClass]="{'is-invalid':form.get('secondName').touched && form.get('secondName').invalid}"/>
-      <div *ngIf="form.get('secondName').touched && form.get('secondName').invalid" class="invalid-feedback">
-        <div *ngIf="form.get('secondName').errors.required">Last Name is Required</div>
+      <label for="lname">Last Name</label>
+      <input type="text" class="form-control" formControlName="lname" [ngClass]="{'is-invalid':form.get('lname').touched && form.get('lname').invalid}"/>
+      <div *ngIf="form.get('lname').touched && form.get('lname').invalid" class="invalid-feedback">
+        <div *ngIf="form.get('lname').errors.required">Last Name is Required</div>
       </div>
     </div>
     <div class="form-group">

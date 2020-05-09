@@ -20,7 +20,7 @@ import { FilterPipe} from './shared/filter.pipe';
 import { DetailedPropertyPageComponent } from './components/detailed-property-page/detailed-property-page.component';
 import { AlertComponent } from './components/alert/alert.component';
 import {AuthGuard} from '../app/guards/auth.guard';
-import { AlertService } from './services/alert/alert.service';
+//import { AlertService } from './services/alert/alert.service';
 import {routing} from '../app/app-routing.module';
 @NgModule({
   declarations: [
@@ -50,8 +50,7 @@ import {routing} from '../app/app-routing.module';
   providers: [
     AuthGuard,
     LoginService,
-    AlertService
-
+  
   ],
   bootstrap: [AppComponent]
 })

@@ -22,15 +22,15 @@
                           </div>
                         
                         </div>
-                      <div class="col-lg-3 w-100"><input class="w-100 h-100" type="text" (keydown)="keyDownFunction($event)"  [(ngModel)]="searchTextCom" placeholder="Company Name"  />
+                      <div class="col-lg-3 w-100"><input class="w-100 h-100" type="text"   [(ngModel)]="searchTextCom" placeholder="Company Name"  />
                         <ul class="cityArrayList" id="companyArrayList" *ngIf="searchTextCom">
-                            <li id="cityArrayListLi" *ngFor="let comp of companyArray| filter : searchTextCom" (click)="bindValueToInputBoxCompany(comp)">
+                            <li id="cityArrayListLi" *ngFor="let comp of companyArray| filter : searchTextCom" >
                               {{comp}}
                             </li>
                           </ul></div>
-                          <div class="col-lg-3 w-100"><input class="w-100 h-100" type="text" (keydown)="keyDownFunction($event)"  [(ngModel)]="searchTexttech" placeholder="Tech park/location"  />
+                          <div class="col-lg-3 w-100"><input class="w-100 h-100" type="text"   [(ngModel)]="searchTexttech" placeholder="Tech park/location"  />
                             <ul class="cityArrayList" id="techParkList" *ngIf="searchTexttech">
-                                <li id="cityArrayListLi" *ngFor="let tech of techParkArray| filter : searchTexttech" (click)="bindValueToInputBoxTechPark(tech)">
+                                <li id="cityArrayListLi" *ngFor="let tech of techParkArray| filter : searchTexttech" >
                                   {{tech}}
                                 </li>
                               </ul></div>
