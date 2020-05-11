@@ -3,6 +3,11 @@ import { HttpClient ,HttpHeaders } from '@angular/common/http';
 import {environment} from 'src/environments/environment';
 import { map ,first} from 'rxjs/operators';
 import {User} from 'src/app/model/User';
+const httpOptions = {
+  headers: new HttpHeaders({ 
+    'Access-Control-Allow-Origin':'*',
+  })
+};
 @Injectable({
   providedIn: 'root'
 })

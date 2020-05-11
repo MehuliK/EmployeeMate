@@ -22,6 +22,7 @@ import { AlertComponent } from './components/alert/alert.component';
 import {AuthGuard} from '../app/guards/auth.guard';
 //import { AlertService } from './services/alert/alert.service';
 import {routing} from '../app/app-routing.module';
+import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,8 +45,12 @@ import {routing} from '../app/app-routing.module';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    MatIconModule,
     routing
     //FontAwesomeModule
+  ],
+  exports:[
+    MatIconModule
   ],
   providers: [
     AuthGuard,
