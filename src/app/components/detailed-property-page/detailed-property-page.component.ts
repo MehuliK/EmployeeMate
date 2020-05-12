@@ -12,4 +12,5 @@ export class DetailedPropertyPageComponent implements OnInit {
   ngOnInit() {
   }
 
+
 }

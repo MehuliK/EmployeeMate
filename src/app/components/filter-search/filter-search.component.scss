@@ -1,0 +1,31 @@
+.filter_div{
+    width: 316px;
+    margin-left: 2px;
+}
+.radio-inline{
+    font-size: 16px;
+  }
+  input[type=radio]{
+   height: 15px;
+   width: 15px;
+   margin-right: 5px;
+  }
+  input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+  .budget-box{
+    width: 95px;
+    height: 37px;
+  }
+  .budget{
+      display: flex;
+  }
+  .h2{
+      margin: 0px;
+  }
+  .card-body-filter
+{
+    padding-left: 1.25rem;
+    padding-top: 9px;
+  padding-bottom: 9px;
+}

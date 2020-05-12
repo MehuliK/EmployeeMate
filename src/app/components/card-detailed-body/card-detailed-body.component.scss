@@ -1,0 +1,50 @@
+.card_holder{
+    display: flex;
+}
+
+.font_header{
+    font-size: 18px;
+}
+.margin-space{
+    margin-top: 55px;
+    margin-left: -44px;
+}
+.card_main{
+    width: 970px;
+    margin-left: 13px;
+}
+.card-suggestion{
+  width: 265px;
+  margin-left: 13px;
+}
+.header_columns{
+    border-right: 2px solid #D3D3D3;
+    display: grid;
+}
+.header_column{
+    display: grid;
+}
+.border_bottom_row{
+    border-bottom: 2px solid #D3D3D3;
+    padding-bottom: 15px;
+}
+.image_div{
+    width: 280px;
+    border: 1px solid #D3D3D3;
+    height: 280px;
+    margin-top: 17px;
+    margin-left: 10px;
+}
+.data_div{
+    width: 625px;
+    border: 1px solid #D3D3D3;
+    height: 280px;
+    margin-top: 17px;
+    margin-left: 15px;
+}
+.data-internal-div{
+    height: 123px;
+    width: 293px;
+    border: 1px solid #D3D3D3;
+    margin-top: 10px;
+}

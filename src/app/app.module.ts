@@ -23,6 +23,8 @@ import {AuthGuard} from '../app/guards/auth.guard';
 //import { AlertService } from './services/alert/alert.service';
 import {routing} from '../app/app-routing.module';
 import { MatIconModule } from '@angular/material/icon';
+import { CardDetailedBodyComponent } from './components/card-detailed-body/card-detailed-body.component';
+import { FilterSearchComponent } from './components/filter-search/filter-search.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +39,9 @@ import { MatIconModule } from '@angular/material/icon';
     HomeBodyComponent,
     FilterPipe,
     DetailedPropertyPageComponent,
-    AlertComponent
+    AlertComponent,
+    CardDetailedBodyComponent,
+    FilterSearchComponent
   ],
   imports: [
     BrowserModule,

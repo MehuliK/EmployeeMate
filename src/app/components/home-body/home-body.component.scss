@@ -23,7 +23,7 @@
     border: 0px;
   }
  .style_text{
-    margin-top: 11%;
+    margin-top: 7%;
     font-size: 54px;
     font-weight: 600;
     margin-bottom: 3.5%;
@@ -63,7 +63,13 @@
             padding-left: 2.125rem;
             padding-right: 2.125rem;
           
-          }    
+          } 
+   .mat-icon-down{
+    margin-top: 11px;
+    position: absolute;
+    margin-left: -24px;
+    cursor: pointer;
+   }          
           
           
 
